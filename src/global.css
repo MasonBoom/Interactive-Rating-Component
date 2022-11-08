@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Overpass';
+    src: local('Overpass'), url(./fonts/Overpass/Overpass-VariableFont_wght.ttf) format('truetype');
+}
+
 html {
     background: #131518;
+    font-family: 'Overpass';
 }
