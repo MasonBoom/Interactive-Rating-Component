@@ -91,4 +91,5 @@ export const Submit = styled.button`
     letter-spacing: 2px;
     color: #FFFFFF;
     margin-top: 32px;
+    cursor: pointer;
 `;
