@@ -13,7 +13,7 @@ import {
 import star from './assets/star.svg';
 
 function App() {
-  
+
   return (
     <Main>
       <StarFrame>

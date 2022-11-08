@@ -1,18 +1,38 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+// animations
+
+const buttonFill = keyframes`
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+`;
+
+const buttonFillReverse = keyframes`
+    0% {
+        background-position: 0 100%;
+        }
+    100% {
+        background-position: 0 0;
+    }
+`;
 
 // color variables
 
-const modalColor = 'radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);';
-const darkBlue = '#262E38;'
-const lightGrey = '#969FAD;'
-const mediumGrey = '#7C8798;'
+const modalColor = 'radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%)';
+const darkBlue = '#262E38'
+const lightGrey = '#969FAD'
+const mediumGrey = '#7C8798'
 
 // app styles
 
 export const Main = styled.div`
     display: flex;
     flex-direction: column;
-    background: ${modalColor}
+    background: ${modalColor};
     border-radius: 30px;
     width: 412px;
     height: 416px;
@@ -20,7 +40,7 @@ export const Main = styled.div`
 `;
 
 export const StarFrame = styled.div`
-    background: ${darkBlue}
+    background: ${darkBlue};
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -53,7 +73,7 @@ export const SubHeader = styled.span`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    color: ${lightGrey}
+    color: ${lightGrey};
     margin-top: 15px;
 `;
 
@@ -70,13 +90,24 @@ export const Button = styled.button`
     height: 50px;
     border-radius: 50%;
     border: none;
-    background: ${darkBlue}
+    background: linear-gradient(0deg, ${lightGrey} 50%, ${darkBlue} 50%);
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     text-align: center;
-    color: ${mediumGrey}
+    color: ${mediumGrey};
     cursor: pointer;
+    background-size: 100% 200%;
+    background-position: 0 0;
+    
+    &:hover {
+        animation: ${buttonFill} 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    
+    &:not(:hover) {
+        animation: ${buttonFillReverse} 0.5s ease-in-out;
+    }
 `;
 
 export const Submit = styled.button`
