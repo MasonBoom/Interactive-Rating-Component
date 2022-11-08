@@ -11,15 +11,6 @@ const buttonFill = keyframes`
     }
 `;
 
-const buttonFillReverse = keyframes`
-    0% {
-        background-position: 0 100%;
-        }
-    100% {
-        background-position: 0 0;
-    }
-`;
-
 // color variables
 
 const modalColor = 'radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%)';
@@ -103,10 +94,6 @@ export const Button = styled.button`
     &:hover {
         animation: ${buttonFill} 0.5s ease-in-out;
         animation-fill-mode: forwards;
-    }
-    
-    &:not(:hover) {
-        animation: ${buttonFillReverse} 0.5s ease-in-out;
     }
 `;
 
