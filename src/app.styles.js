@@ -11,12 +11,22 @@ const buttonFill = keyframes`
     }
 `;
 
+const submitButtonShadow = keyframes`
+    0% {
+        box-shadow: 0;
+    }
+    100% {
+        box-shadow: 0 0 5px 10px #FC7614;
+    }
+`;
+
 // color variables
 
 const modalColor = 'radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%)';
 const darkBlue = '#262E38'
 const lightGrey = '#969FAD'
 const mediumGrey = '#7C8798'
+const orange = '#FC7614'
 
 // app styles
 
@@ -58,6 +68,11 @@ export const Header = styled.h1`
     font-weight: 700;
     font-size: 28px;
     color: white;
+
+    &.confirmation {
+        margin: 0 auto;
+        margin-top: 32px;
+    }
 `;
 
 export const SubHeader = styled.span`
@@ -66,6 +81,12 @@ export const SubHeader = styled.span`
     line-height: 24px;
     color: ${lightGrey};
     margin-top: 15px;
+
+    &.confirmation {
+        text-align: center;
+        margin: 32px 32px;
+        margin-top: 7px;
+    }
 `;
 
 export const ButtonRow = styled.div`
@@ -94,6 +115,12 @@ export const Button = styled.button`
     &:hover {
         animation: ${buttonFill} 0.5s ease-in-out;
         animation-fill-mode: forwards;
+        box-shadow: 0px 5px 5px black;
+    }
+
+    &.active {
+        background: ${orange};
+        color: white;
     }
 `;
 
@@ -102,7 +129,7 @@ export const Submit = styled.button`
     height: 45px;
     border-radius: 22.5px;;
     border: none;
-    background: #FC7614;
+    background: ${orange};
     font-weight: 700;
     font-size: 15px;
     line-height: 19px;
@@ -110,4 +137,15 @@ export const Submit = styled.button`
     color: #FFFFFF;
     margin-top: 32px;
     cursor: pointer;
+    
+    &:hover {
+        animation: ${submitButtonShadow} 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    &:active {
+        color: ${orange};
+        background: white;
+        animation: none;
+    }
 `;
