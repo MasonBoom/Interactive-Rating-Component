@@ -26,7 +26,13 @@ function App() {
     setRating(index + 1);
   }
 
-  console.log(rating)
+  const handleSubmit = () => {
+    if(rating > 0) {
+      setSubmitted(true);
+    } else {
+      alert('Please select a rating');
+    }
+  }
 
   return (
     <>
@@ -47,7 +53,7 @@ function App() {
               <Button onClick={() => toggleButton(i)} id={`button${i}`} className='button' key={i}>{i+1}</Button>
             ))}
           </ButtonRow>
-          <Submit onClick={() => setSubmitted(true)} >Submit</Submit>
+          <Submit onClick={() => handleSubmit()} >Submit</Submit>
         </RatingContainer>
       </Main>
       ) : <Confirmation rating={rating} />
